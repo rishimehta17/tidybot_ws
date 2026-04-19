@@ -1,0 +1,28 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    arm_controller:
+      type: position_controllers/JointGroupPositionController
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - left_arm_shoulder_joint
+      - left_arm_elbow_joint
+      - left_arm_wrist_joint
+      - left_arm_gripper_left_gear_joint
+      - left_arm_gripper_right_gear_joint
+      - left_arm_gripper_left_link_joint
+      - left_arm_gripper_right_link_joint
+      - right_arm_shoulder_joint
+      - right_arm_elbow_joint
+      - right_arm_wrist_joint
+      - right_arm_gripper_left_gear_joint
+      - right_arm_gripper_right_gear_joint
+      - right_arm_gripper_left_link_joint
+      - right_arm_gripper_right_link_joint

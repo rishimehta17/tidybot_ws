@@ -1,0 +1,1942 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="Tidy_bot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.25 -0.2500093528256 0.462497525463243"
+        rpy="0 0 0" />
+      <mass
+        value="27.0640136814783" />
+      <inertia
+        ixx="0.362567790316988"
+        ixy="-1.25444647830386E-17"
+        ixz="1.13771997261566E-17"
+        iyy="0.697592683828732"
+        iyz="1.58209388671049E-05"
+        izz="0.551169693966086" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.909803921568627 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="robot_base_link">
+    <inertial>
+      <origin
+        xyz="0.25 0.124859119331265 -0.25"
+        rpy="0 0 0" />
+      <mass
+        value="62.5001546786342" />
+      <inertia
+        ixx="1.62637297119313"
+        ixy="-1.11974457188293E-16"
+        ixz="-3.99693671985619E-18"
+        iyy="2.60434744746011"
+        iyz="-1.73121971942386E-16"
+        izz="1.62835226292218" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/robot_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/robot_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="robot_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.5 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="robot_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-1.17961196366423E-16 2.77555756156289E-16 0.0320136054307549"
+        rpy="0 0 0" />
+      <mass
+        value="1.52505890929558" />
+      <inertia
+        ixx="0.00343448274828062"
+        ixy="1.62630325872826E-19"
+        ixz="9.0891421429294E-20"
+        iyy="0.00343448274828062"
+        iyz="-3.8092085365007E-19"
+        izz="0.00578204516540705" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/front_left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/front_left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.515 0.04 -0.11"
+      rpy="-1.5708 -0.071653 -1.5708" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="front_left_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 -1.11022302462516E-16 0.032013605430755"
+        rpy="0 0 0" />
+      <mass
+        value="1.52505890929558" />
+      <inertia
+        ixx="0.00343448274828061"
+        ixy="7.58941520739853E-19"
+        ixz="1.36675672392079E-19"
+        iyy="0.00343448274828061"
+        iyz="-5.60058160286956E-19"
+        izz="0.00578204516540704" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/rear_left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/rear_left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.515 0.04 -0.39"
+      rpy="1.5708 -0.49179 1.5708" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="rear_left_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_right_wheel_link">
+    <inertial>
+      <origin
+        xyz="2.08166817117217E-16 8.32667268468867E-17 0.0320136054307551"
+        rpy="0 0 0" />
+      <mass
+        value="1.52505890929558" />
+      <inertia
+        ixx="0.00343448274828062"
+        ixy="6.50521303491303E-19"
+        ixz="4.85088352758886E-19"
+        iyy="0.00343448274828062"
+        iyz="-5.15482582436944E-19"
+        izz="0.00578204516540705" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/rear_right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/rear_right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.015 0.04 -0.39"
+      rpy="-1.5708 0.78925 1.5708" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="rear_right_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="front_right_wheel_link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 -1.38777878078145E-16 0.0320136054307551"
+        rpy="0 0 0" />
+      <mass
+        value="1.52505890929558" />
+      <inertia
+        ixx="0.00343448274828061"
+        ixy="-5.42101086242752E-19"
+        ixz="3.04472486362147E-19"
+        iyy="0.00343448274828061"
+        iyz="-3.07021089056481E-19"
+        izz="0.00578204516540704" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/front_right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/front_right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.015 0.04 -0.11"
+      rpy="-1.5708 -0.83688 1.5708" />
+    <parent
+      link="robot_base_link" />
+    <child
+      link="front_right_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.00750000000000006"
+        rpy="0 0 0" />
+      <mass
+        value="0.0448841150082347" />
+      <inertia
+        ixx="6.79824065255275E-06"
+        ixy="5.68686671130206E-22"
+        ixz="-1.9713495744178E-22"
+        iyy="2.17780993037242E-05"
+        iyz="-2.87582521166733E-22"
+        izz="2.68931856434682E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 -1.5708" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.25 -0.38 0.525"
+      rpy="0 0 -1.57" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="head_link">
+    <inertial>
+      <origin
+        xyz="0.0438844168016946 7.16553013591081E-08 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="2.8104865360962" />
+      <inertia
+        ixx="0.0069631681644132"
+        ixy="2.49499736188486E-18"
+        ixz="1.53908061062061E-10"
+        iyy="0.0116975239530097"
+        iyz="2.89843912142178E-18"
+        izz="0.0139850477172818" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/head_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/head_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_joint"
+    type="fixed">
+    <origin
+      xyz="0.20612 -0.25 0.67336"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="head_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0.0124110762689441 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0311813495867005" />
+      <inertia
+        ixx="4.70080801751266E-06"
+        ixy="-1.22232070477516E-38"
+        ixz="-6.83055039996204E-39"
+        iyy="6.19531634637872E-06"
+        iyz="-8.13026919309749E-23"
+        izz="4.70080801751266E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.549019607843137 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.25 -0.25 0.74373"
+      rpy="3.14159 -0 3.14159" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_arm_shoulder_link">
+    <inertial>
+      <origin
+        xyz="6.0507154842071E-14 -5.89528426075958E-14 0.0714995817398426"
+        rpy="0 0 0" />
+      <mass
+        value="1.62761169005869" />
+      <inertia
+        ixx="0.00408729756082869"
+        ixy="6.19277120902928E-11"
+        ixz="-3.67380419294617E-15"
+        iyy="0.00395506428881273"
+        iyz="3.47296357184198E-15"
+        izz="0.00439569615641047" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0.5 -0.25 0.525"
+      rpy="1.5708 1.4117 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_arm_shoulder_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_elbow_link">
+    <inertial>
+      <origin
+        xyz="0.0491614643372391 -3.97798499696123E-09 0.239968239315284"
+        rpy="0 0 0" />
+      <mass
+        value="0.959226632634235" />
+      <inertia
+        ixx="0.0210055614667067"
+        ixy="1.80474090316282E-10"
+        ixz="-5.28527995548554E-05"
+        iyy="0.0210534146734217"
+        iyz="5.27693719665549E-09"
+        izz="0.000409101203876618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_elbow_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_elbow_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.051597 0.13392"
+      rpy="0.14198 0 -1.5708" />
+    <parent
+      link="left_arm_shoulder_link" />
+    <child
+      link="left_arm_elbow_link" />
+    <axis
+      xyz="0.9 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_wrist_link">
+    <inertial>
+      <origin
+        xyz="0.0230000004302113 -8.1651237771041E-08 0.164032898187577"
+        rpy="0 0 0" />
+      <mass
+        value="0.497340245663486" />
+      <inertia
+        ixx="0.00391557500264863"
+        ixy="-6.61475529570039E-11"
+        ixz="2.2078801562356E-12"
+        iyy="0.00391774744701937"
+        iyz="2.24453684241274E-09"
+        izz="0.00022396336763909" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_wrist_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_wrist_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_wrist_joint"
+    type="revolute">
+    <origin
+      xyz="0.049356 0.024235 0.50768"
+      rpy="-1.2162 0 -1.5708" />
+    <parent
+      link="left_arm_elbow_link" />
+    <child
+      link="left_arm_wrist_link" />
+    <axis
+      xyz="0.9 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_gripper_base_link">
+    <inertial>
+      <origin
+        xyz="-0.0542783226217602 0.00280893895884748 0.000185044119523248"
+        rpy="0 0 0" />
+      <mass
+        value="0.0170348628702175" />
+      <inertia
+        ixx="6.53370958166721E-06"
+        ixy="-1.06103277899907E-07"
+        ixz="-5.27342835850112E-13"
+        iyy="1.16151258025924E-05"
+        iyz="5.62610594632526E-14"
+        izz="5.53918881310884E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_gripper_base_joint"
+    type="fixed">
+    <origin
+      xyz="0.019301 0 0.265"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="left_arm_wrist_link" />
+    <child
+      link="left_arm_gripper_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_arm_gripper_left_gear_link">
+    <inertial>
+      <origin
+        xyz="-0.011573823228332 0.00300000000017253 -0.000808914767809421"
+        rpy="0 0 0" />
+      <mass
+        value="0.0063083972885778" />
+      <inertia
+        ixx="5.47698353496352E-07"
+        ixy="1.50546871484651E-20"
+        ixz="6.11228642003445E-08"
+        iyy="3.57825629200487E-06"
+        iyz="6.61744490042422E-22"
+        izz="3.06840832223998E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_left_gear_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_left_gear_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_gripper_left_gear_joint"
+    type="revolute">
+    <origin
+      xyz="-0.045199 0.006 0.022"
+      rpy="0 0.41631 0" />
+    <parent
+      link="left_arm_gripper_base_link" />
+    <child
+      link="left_arm_gripper_left_gear_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_gripper_left_finger_link">
+    <inertial>
+      <origin
+        xyz="-0.00368401443123467 3.33066907387547E-16 -0.00392541127130497"
+        rpy="0 0 0" />
+      <mass
+        value="0.00839137136228644" />
+      <inertia
+        ixx="4.25866403877227E-07"
+        ixy="-2.8577435802482E-20"
+        ixz="1.0787667910273E-06"
+        iyy="6.27737349321986E-06"
+        iyz="5.92261318587968E-21"
+        izz="5.90185531751635E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_left_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_left_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_gripper_left_finger_joint"
+    type="revolute">
+    <origin
+      xyz="-0.088161 -0.006 -0.028407"
+      rpy="3.1416 0.78974 3.1416" />
+    <parent
+      link="left_arm_gripper_left_gear_link" />
+    <child
+      link="left_arm_gripper_left_finger_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="left_arm_gripper_left_gear_joint"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="left_arm_gripper_left_link_link">
+    <inertial>
+      <origin
+        xyz="-1.20759294786055E-08 -0.0100000000000284 -4.1171605236201E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00429882746791788" />
+      <inertia
+        ixx="5.3710108545104E-08"
+        ixy="7.16255692409667E-21"
+        ixz="4.27068849157825E-16"
+        iyy="2.41160922199762E-06"
+        iyz="-3.80503081774393E-23"
+        izz="2.37996529506536E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_left_link_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_left_link_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_gripper_left_link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.044265 0.006 -0.06196"
+      rpy="0 -0.67744 0" />
+    <parent
+      link="left_arm_gripper_left_gear_link" />
+    <child
+      link="left_arm_gripper_left_link_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="left_arm_gripper_left_gear_joint"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="left_arm_gripper_right_gear_link">
+    <inertial>
+      <origin
+        xyz="-0.0115737679097807 0.0030000000000609 -0.00080909318651301"
+        rpy="0 0 0" />
+      <mass
+        value="0.00630839728857784" />
+      <inertia
+        ixx="5.47698189245789E-07"
+        ixy="-1.22819777351874E-20"
+        ixz="6.11194772554923E-08"
+        iyy="3.57825629200487E-06"
+        iyz="-1.96620831603855E-21"
+        izz="3.06840848649055E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_right_gear_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_right_gear_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_gripper_right_gear_joint"
+    type="revolute">
+    <origin
+      xyz="-0.045199 0.012 -0.022"
+      rpy="3.1416 -0.29485 0" />
+    <parent
+      link="left_arm_gripper_base_link" />
+    <child
+      link="left_arm_gripper_right_gear_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="left_arm_gripper_left_gear_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="left_arm_gripper_right_finger_link">
+    <inertial>
+      <origin
+        xyz="-0.00368392007534446 0.0059999999999808 -0.0039252264805667"
+        rpy="0 0 0" />
+      <mass
+        value="0.00839137136228643" />
+      <inertia
+        ixx="4.25865369586847E-07"
+        ixy="2.71348328141895E-20"
+        ixz="1.07876416591377E-06"
+        iyy="6.27737349321985E-06"
+        iyz="-4.63221143029695E-21"
+        izz="5.90185635180673E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_right_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_right_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_gripper_right_finger_joint"
+    type="revolute">
+    <origin
+      xyz="-0.091174 0.006 -0.025063"
+      rpy="-3.1416 0.67715 3.1416" />
+    <parent
+      link="left_arm_gripper_right_gear_link" />
+    <child
+      link="left_arm_gripper_right_finger_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="left_arm_gripper_right_gear_joint"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="left_arm_gripper_right_link_link">
+    <inertial>
+      <origin
+        xyz="-2.02520888947788E-08 -0.00999999999984974 5.37413511469964E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00429882746791787" />
+      <inertia
+        ixx="5.3710108545105E-08"
+        ixy="1.2490840839857E-20"
+        ixz="5.9273093881676E-14"
+        iyy="2.41160922199763E-06"
+        iyz="5.29395592033938E-23"
+        izz="2.37996529506537E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_right_link_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/left_arm_gripper_right_link_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_gripper_right_link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.049256 0 -0.059216"
+      rpy="3.1416 -0.68191 0" />
+    <parent
+      link="left_arm_gripper_right_gear_link" />
+    <child
+      link="left_arm_gripper_right_link_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="left_arm_gripper_left_gear_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="right_arm_shoulder_link">
+    <inertial>
+      <origin
+        xyz="2.1094237467878E-15 2.3037127760972E-15 0.0714995817397897"
+        rpy="0 0 0" />
+      <mass
+        value="1.6276116900562" />
+      <inertia
+        ixx="0.00408729756082261"
+        ixy="6.19236437300608E-11"
+        ixz="-5.62088430292548E-19"
+        iyy="0.00395506428880642"
+        iyz="-1.01042555821894E-18"
+        izz="0.0043956961564023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.25 0.525"
+      rpy="1.5708 -1.4117 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_arm_shoulder_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_elbow_link">
+    <inertial>
+      <origin
+        xyz="0.0491614494681738 -7.09368641604868E-09 0.239968233927926"
+        rpy="0 0 0" />
+      <mass
+        value="0.959226669304705" />
+      <inertia
+        ixx="0.0210055299003748"
+        ixy="1.73899579632153E-10"
+        ixz="-5.28534696098345E-05"
+        iyy="0.0210533838958847"
+        iyz="-6.02539833084476E-10"
+        izz="0.000409100009526385" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_elbow_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_elbow_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.051597 0.13392"
+      rpy="0.14198 0 -1.5708" />
+    <parent
+      link="right_arm_shoulder_link" />
+    <child
+      link="right_arm_elbow_link" />
+    <axis
+      xyz="-0.9 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_wrist_link">
+    <inertial>
+      <origin
+        xyz="0.0230000029066547 -1.352100986729E-08 0.16403289466766"
+        rpy="0 0 0" />
+      <mass
+        value="0.49734026376852" />
+      <inertia
+        ixx="0.00391557518829638"
+        ixy="-8.19135409729863E-11"
+        ixz="1.1604717678476E-10"
+        iyy="0.00391774761768558"
+        iyz="4.88889656282047E-10"
+        izz="0.00022396338293505" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_wrist_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_wrist_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_wrist_joint"
+    type="revolute">
+    <origin
+      xyz="0.049356 -0.024235 0.50768"
+      rpy="1.6327 0 1.5708" />
+    <parent
+      link="right_arm_elbow_link" />
+    <child
+      link="right_arm_wrist_link" />
+    <axis
+      xyz="-0.9 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_gripper_base_link">
+    <inertial>
+      <origin
+        xyz="-0.051416389106459 0.00280893890429923 7.5111235338654E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0170348628702175" />
+      <inertia
+        ixx="6.53370958166748E-06"
+        ixy="-1.06103277899936E-07"
+        ixz="-1.64744369549066E-13"
+        iyy="1.16151258025924E-05"
+        iyz="1.75762200188374E-14"
+        izz="5.5391888131086E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_gripper_base_joint"
+    type="fixed">
+    <origin
+      xyz="0.013938 0 0.265"
+      rpy="3.1416 1.5708 1.5708" />
+    <parent
+      link="right_arm_wrist_link" />
+    <child
+      link="right_arm_gripper_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_arm_gripper_left_gear_link">
+    <inertial>
+      <origin
+        xyz="-0.0115737764525717 0.00300000000003531 -0.000809051639316938"
+        rpy="0 0 0" />
+      <mass
+        value="0.00630839728857781" />
+      <inertia
+        ixx="5.47698252473228E-07"
+        ixy="3.61560645746928E-21"
+        ixz="6.11207810654119E-08"
+        iyy="3.57825629200486E-06"
+        iyz="-2.64697796016969E-22"
+        izz="3.0684084232631E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_left_gear_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_left_gear_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_gripper_left_gear_joint"
+    type="revolute">
+    <origin
+      xyz="-0.045199 0.012 -0.022"
+      rpy="3.1416 -1.4817 0" />
+    <parent
+      link="right_arm_gripper_base_link" />
+    <child
+      link="right_arm_gripper_left_gear_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_gripper_left_finger_link">
+    <inertial>
+      <origin
+        xyz="-0.00368397879269131 0.0060000000000211 -0.00392533911032777"
+        rpy="0 0 0" />
+      <mass
+        value="0.00839137136228642" />
+      <inertia
+        ixx="4.25866029195422E-07"
+        ixy="9.30412752999646E-21"
+        ixz="1.0787658400551E-06"
+        iyy="6.27737349321984E-06"
+        iyz="-1.17790519227551E-21"
+        izz="5.90185569219814E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_left_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_left_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_gripper_left_finger_joint"
+    type="revolute">
+    <origin
+      xyz="-0.050314 0.006 -0.03881"
+      rpy="0 1.3262 0" />
+    <parent
+      link="right_arm_gripper_left_gear_link" />
+    <child
+      link="right_arm_gripper_left_finger_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="right_arm_gripper_left_gear_joint"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="right_arm_gripper_left_link_link">
+    <inertial>
+      <origin
+        xyz="2.83941306022939E-08 -0.00999999999988876 4.8044239697731E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00429882746791787" />
+      <inertia
+        ixx="5.37101085451059E-08"
+        ixy="-2.02734213318504E-21"
+        ixz="7.16844126861937E-14"
+        iyy="2.41160922199762E-06"
+        iyz="-5.29395592033938E-23"
+        izz="2.37996529506535E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_left_link_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_left_link_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_gripper_left_link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.02032 0 -0.038188"
+      rpy="3.1416 -0.020715 0" />
+    <parent
+      link="right_arm_gripper_left_gear_link" />
+    <child
+      link="right_arm_gripper_left_link_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="right_arm_gripper_left_gear_joint"
+      multiplier="1"
+      offset="0" />
+  </joint>
+  <link
+    name="right_arm_gripper_right_gear_link">
+    <inertial>
+      <origin
+        xyz="-0.0115737765035465 0.00300000000003997 -0.00080905165257511"
+        rpy="0 0 0" />
+      <mass
+        value="0.00630839728857781" />
+      <inertia
+        ixx="5.47698252491978E-07"
+        ixy="1.48230765769503E-21"
+        ixz="6.11207814520632E-08"
+        iyy="3.57825629200487E-06"
+        iyz="0"
+        izz="3.06840842324436E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_right_gear_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_right_gear_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_gripper_right_gear_joint"
+    type="revolute">
+    <origin
+      xyz="-0.045199 0.006 0.022"
+      rpy="-3.1416 1.5384 -3.1416" />
+    <parent
+      link="right_arm_gripper_base_link" />
+    <child
+      link="right_arm_gripper_right_gear_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="right_arm_gripper_left_gear_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="right_arm_gripper_right_finger_link">
+    <inertial>
+      <origin
+        xyz="-0.00368399956502652 -2.80886425230165E-14 -0.00392534377355658"
+        rpy="0 0 0" />
+      <mass
+        value="0.00839137136228641" />
+      <inertia
+        ixx="4.25866121345343E-07"
+        ixy="2.86320297229105E-20"
+        ixz="1.07876607393902E-06"
+        iyy="6.27737349321984E-06"
+        iyz="-5.63806305516144E-21"
+        izz="5.90185560004822E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_right_finger_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_right_finger_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_gripper_right_finger_joint"
+    type="revolute">
+    <origin
+      xyz="-0.045833 -0.006 -0.037407"
+      rpy="0 1.2088 0" />
+    <parent
+      link="right_arm_gripper_right_gear_link" />
+    <child
+      link="right_arm_gripper_right_finger_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="right_arm_gripper_left_gear_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+  <link
+    name="right_arm_gripper_right_link_link">
+    <inertial>
+      <origin
+        xyz="-4.77566179934996E-08 -0.00999999999998102 7.43052458451743E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00429882746791787" />
+      <inertia
+        ixx="5.37101085452201E-08"
+        ixy="-1.06789017080596E-21"
+        ixz="5.20117682793753E-13"
+        iyy="2.41160922199763E-06"
+        iyz="2.11758236813575E-22"
+        izz="2.37996529506525E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_right_link_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://drift_tidybot/meshes/right_arm_gripper_right_link_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_gripper_right_link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.01584 0.006 -0.036762"
+      rpy="0 -0.021485 0" />
+    <parent
+      link="right_arm_gripper_right_gear_link" />
+    <child
+      link="right_arm_gripper_right_link_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <mimic
+      joint="right_arm_gripper_left_gear_joint"
+      multiplier="-1"
+      offset="0" />
+  </joint>
+
+
+  <gazebo reference="front_left_wheel_link">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+  <gazebo reference="front_right_wheel_link">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+  <gazebo reference="rear_left_wheel_link">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+  <gazebo reference="rear_right_wheel_link">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="diff_drive">
+      <num_wheel_pairs>2</num_wheel_pairs>
+      <left_joint>front_left_wheel_joint</left_joint>
+      <right_joint>front_right_wheel_joint</right_joint>
+      <left_joint>rear_left_wheel_joint</left_joint>
+      <right_joint>rear_right_wheel_joint</right_joint>
+      <wheel_separation>0.53</wheel_separation>
+      <wheel_diameter>0.15</wheel_diameter>
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+      <command_topic>cmd_vel</command_topic>
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <update_rate>50</update_rate>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <parameters>$(find drift_tidybot)/config/controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="mimic_left_arm_gripper_right_link_joint"
+      filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>left_arm_gripper_left_gear_joint</joint>
+      <mimicJoint>left_arm_gripper_right_link_joint</mimicJoint>
+      <multiplier>-1.0</multiplier>
+      <offset>0.0</offset>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="mimic_left_arm_gripper_right_gear_joint"
+      filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>left_arm_gripper_left_gear_joint</joint>
+      <mimicJoint>left_arm_gripper_right_gear_joint</mimicJoint>
+      <multiplier>1.0</multiplier>
+      <offset>0.0</offset>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="mimic_left_arm_gripper_left_link_joint"
+      filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>left_arm_gripper_left_gear_joint</joint>
+      <mimicJoint>left_arm_gripper_left_link_joint</mimicJoint>
+      <multiplier>1.0</multiplier>
+      <offset>0.0</offset>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="mimic_right_arm_gripper_right_link_joint"
+      filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>right_arm_gripper_left_gear_joint</joint>
+      <mimicJoint>right_arm_gripper_right_link_joint</mimicJoint>
+      <multiplier>-1.0</multiplier>
+      <offset>0.0</offset>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="mimic_right_arm_gripper_right_gear_joint"
+      filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>right_arm_gripper_left_gear_joint</joint>
+      <mimicJoint>right_arm_gripper_right_gear_joint</mimicJoint>
+      <multiplier>1.0</multiplier>
+      <offset>0.0</offset>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="mimic_right_arm_gripper_left_link_joint"
+      filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>right_arm_gripper_left_gear_joint</joint>
+      <mimicJoint>right_arm_gripper_left_link_joint</mimicJoint>
+      <multiplier>1.0</multiplier>
+      <offset>0.0</offset>
+    </plugin>
+  </gazebo>
+
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+
+    <joint name="left_arm_shoulder_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">-1.0</param>
+      </state_interface>
+    </joint>
+
+    <joint name="left_arm_elbow_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">1.57</param>
+      </state_interface>
+    </joint>
+
+    <joint name="left_arm_wrist_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="left_arm_gripper_left_gear_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+
+    <joint name="left_arm_gripper_right_gear_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+
+    <joint name="left_arm_gripper_left_link_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+
+    <joint name="left_arm_gripper_right_link_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+
+
+    <joint name="right_arm_shoulder_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">-1.0</param>
+      </state_interface>
+    </joint>
+
+    <joint name="right_arm_elbow_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">1.57</param>
+      </state_interface>
+    </joint>
+
+    <joint name="right_arm_wrist_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+    <joint name="right_arm_gripper_left_gear_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+
+    <joint name="right_arm_gripper_right_gear_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+
+    <joint name="right_arm_gripper_left_link_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+
+    <joint name="right_arm_gripper_right_link_joint">
+      <command_interface name="position" />
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+    </joint>
+
+
+    <!--  -->
+
+  </ros2_control>
+
+
+  <gazebo reference="lidar_link">
+    <material>Gazebo/Red</material>
+
+    <sensor name="laser" type="ray">
+      <pose> 0 0 0 0 0 0 </pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.3</min>
+          <max>12</max>
+        </range>
+      </ray>
+      <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <argument>~/out:=scan</argument>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>lidar_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+  <!-- <link name="camera_link_optical"></link>
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_link_optical" />
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708" />
+  </joint> -->
+
+
+  <gazebo reference="camera_link">
+    <material>Gazebo/Red</material>
+
+    <sensor name="camera" type="camera">
+      <pose> 0 0 0 0 0 0 </pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <camera>
+        <horizontal_fov>1.089</horizontal_fov>
+        <image>
+          <format>R8G8B8</format>
+          <width>640</width>
+          <height>480</height>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>8.0</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <frame_name>camera_link_optical</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>
